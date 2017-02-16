@@ -14,9 +14,19 @@
 
 FactoryGirl.define do
   factory :movie do
-    title "MyString"
-    synopsis "MyText"
-    rent_price "9.99"
-    is_rented false
+    title 		{Faker::Book.title}
+    synopsis 	{Faker::Lorem.paragraph}
+    rent_price  {Faker::Number.decimal(2)}
+    image 		{Faker::Avatar.image}
+    is_rented   {Faker::Boolean.boolean}
   end
+
+  factory :invalid_movie, class: Movie do
+    title 		nil
+    synopsis 	nil
+    rent_price  nil
+    image 		nil
+    is_rented   nil
+  end
+
 end
