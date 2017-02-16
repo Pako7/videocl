@@ -67,8 +67,9 @@ class MoviesController < ApplicationController
 
 
   def finalize_rent
-    message = [true, false].sample ? t(:completed_rent) : t(:incompleted_rent)
-    render json: { :message => message }
+    success = [true, false].sample
+    message = success ? t(:completed_rent) : t(:incompleted_rent)
+    render json: { message: message, success: success }
   end
 
   private

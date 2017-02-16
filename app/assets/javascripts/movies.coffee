@@ -12,5 +12,15 @@ $(document).on 'click', '.rent-movie', (evt) ->
       data:
         id: id
       success: (data) ->
-        console.log data
-        console.log data.message
+        $('#modal-message-rent').html(data.message)
+        if data.success == true
+          $('#modal-message-rent').addClass 'alert-success'
+          $('#modal-message-rent').removeClass 'alert-danger'
+        else
+          $('#modal-message-rent').addClass 'alert-danger'
+          $('#modal-message-rent').removeClass 'alert-success'
+        $('#container-result-rent-message').modal 'show'
+        window.setTimeout ->
+         $('#container-result-rent-message').modal 'hide'
+        , 2450
+

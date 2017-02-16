@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -78,6 +80,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '~> 4.2'
 gem 'carrierwave', '~> 1.0'
-gem 'mini_magick'
+gem 'mini_magick', '~> 4.5.1'
+gem 'bootstrap-sass', '~> 3.3.6'
 
-ruby '2.3.0'

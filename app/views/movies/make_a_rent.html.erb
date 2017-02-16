@@ -7,6 +7,15 @@
     <%= image_tag movie.image.url(:medium) %>
     <%= movie.synopsis.truncate(100) %>
     <%= movie.rent_price %>
-    <%= button_tag 'Rent', { type: 'button', class: 'rent-movie', data: { id: movie.id }} %>
+    <%= button_tag 'Rent', { type: 'button', class: 'rent-movie btn btn-primary', data: { id: movie.id }} %>
     <br>
 <% end %>
+
+<div class="modal fade" id="container-result-rent-message" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content" id="modal-content-message">
+    	<div id="modal-message-rent" class="alert" role="alert">
+      </div>
+    </div>
+  </div>
+</div>
