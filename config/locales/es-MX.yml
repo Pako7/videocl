@@ -24,17 +24,25 @@ es-MX:
   back: 'Regresar'
   edit: 'Editar'
   completed_rent: 'Se completó la renta.'
+  helpers:
+    submit:
+      create: Crear %{model}
+      submit: Guardar %{model}
+      update: Actualizar %{model}
   incompleted_rent: 'No se le puede rentar porque tiene deudas.'
   movie:
+    create: 'Crear'
+    delete: 'Eliminar'
     new: 'Nueva película'
-    editing: 'Editando película'
     edit: 'Editar'
-    show: 'Mostrar'
-    title: 'Título'
-    synopsis: 'Sinopsis'
-    rent_price: 'Precio de renta'
+    editing: 'Editando película'
     image: 'Imagen'
     is_rented: '¿Está rentado?'
-    create: 'Crear'
+    rent: 'Rentar'
+    rent_price: 'Precio de renta'
+    show: 'Mostrar'
+    synopsis: 'Sinopsis'
+    title: 'Título'
+  movies: 'Películas'
   say_true: 'Si'
   say_false: 'No'

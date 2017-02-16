@@ -25,5 +25,8 @@
   <%= @movie.is_rented %>
 </p>
 
-<%= link_to t(:edit), edit_movie_path(@movie) %> |
-<%= link_to t(:back), movies_path %>
+
+<td><%= link_to t('movie.delete'), @movie, method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger' %></td>
+<%= link_to t(:edit), edit_movie_path(@movie), {class: 'btn btn-info'} %>
+<%= link_to t(:back), movies_path, {class: 'btn btn-default'} %>
+<%= link_to t('movie.new'), new_movie_path, {class: 'btn btn-default'} %>

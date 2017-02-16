@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Movies</h1>
+<h1><%= t(:movies) %></h1>
 
 <%= link_to t('movie.new'), new_movie_path, {class: 'btn btn-default'} %>
 
@@ -27,7 +27,7 @@
         <td><%= t("say_#{movie.is_rented}") %></td>
         <td><%= link_to t('movie.show'), movie, {class: 'btn btn-info'} %></td>
         <td><%= link_to t('movie.edit'), edit_movie_path(movie), {class: 'btn btn-info'} %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger' %></td>
+        <td><%= link_to t('movie.delete'), movie, method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>

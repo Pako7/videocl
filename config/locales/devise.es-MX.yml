@@ -14,6 +14,7 @@ es-MX:
         other: "%{count} errores evitaron que este %{resource} fuera guardado:"
   login: 'Iniciar sesión'
   email: 'Correo electrónico'
+  name: 'Nombre'
   password: 'Contraseña'
   remember_me: 'Recordar'
   sign_up: 'Registrarme'
