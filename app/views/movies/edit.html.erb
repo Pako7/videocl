@@ -1,6 +1,9 @@
-<h1>Editing Movie</h1>
+<div class="row col-md-12 col-md-offset-4 col-sm-12 col-sm-offset-3">
+  <h1><%= t('movie.editing') %></h1>
 
-<%= render 'form', movie: @movie %>
-
-<%= link_to 'Show', @movie %> |
-<%= link_to 'Back', movies_path %>
+  <div class="col-sm-4 col-lg-3 col-md-4">
+    <%= render 'form', movie: @movie %>
+    <%= link_to 'Show', @movie %> |
+    <%= link_to t(:back), movies_path %>
+  </div>
+</div>

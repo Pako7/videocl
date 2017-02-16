@@ -2,13 +2,17 @@
 
 <h1>Movies</h1>
 
-<table>
+<%= link_to t('movie.new'), new_movie_path, {class: 'btn btn-default'} %>
+
+<div class="table-responsive">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Synopsis</th>
-      <th>Rent price</th>
-      <th>Is rented</th>
+      <th><%= t('movie.title') %></th>
+      <th><%= t('movie.image') %></th>
+      <th><%= t('movie.synopsis') %></th>
+      <th><%= t('movie.rent_price') %></th>
+      <th><%= t('movie.is_rented') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,17 +21,16 @@
     <% @movies.each do |movie| %>
       <tr>
         <td><%= movie.title %></td>
+        <td><%= image_tag movie.image.url(:thumb) %></td>
         <td><%= movie.synopsis %></td>
         <td><%= movie.rent_price %></td>
-        <td><%= movie.is_rented %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= t("say_#{movie.is_rented}") %></td>
+        <td><%= link_to t('movie.show'), movie, {class: 'btn btn-info'} %></td>
+        <td><%= link_to t('movie.edit'), edit_movie_path(movie), {class: 'btn btn-info'} %></td>
+        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
-
-<%= link_to 'New Movie', new_movie_path %>

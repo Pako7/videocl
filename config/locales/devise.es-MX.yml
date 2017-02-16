@@ -1,4 +1,5 @@
 es-MX:
+
   activate: 'Activar'
   are_you_sure: '¿Estás seguro?'
   inactivate: 'Deshabilitar'
@@ -11,6 +12,13 @@ es-MX:
       not_saved:
         one: "1 error evitó que este %{resource} fuera guardado:"
         other: "%{count} errores evitaron que este %{resource} fuera guardado:"
+  login: 'Iniciar sesión'
+  email: 'Correo electrónico'
+  password: 'Contraseña'
+  remember_me: 'Recordar'
+  sign_up: 'Registrarme'
+  forgot_my_password: 'Olvidé mi contraseña'
+  password_confirmation: 'Confirmar contraseña'
 
   devise:
     failure:

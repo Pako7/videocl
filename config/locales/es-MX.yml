@@ -20,5 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es-MX:
+  are_you_sure: '¿Está seguro?'
+  back: 'Regresar'
+  edit: 'Editar'
   completed_rent: 'Se completó la renta.'
   incompleted_rent: 'No se le puede rentar porque tiene deudas.'
+  movie:
+    new: 'Nueva película'
+    editing: 'Editando película'
+    edit: 'Editar'
+    show: 'Mostrar'
+    title: 'Título'
+    synopsis: 'Sinopsis'
+    rent_price: 'Precio de renta'
+    image: 'Imagen'
+    is_rented: '¿Está rentado?'
+    create: 'Crear'
+  say_true: 'Si'
+  say_false: 'No'
