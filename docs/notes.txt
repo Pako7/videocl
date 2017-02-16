@@ -1,3 +1,5 @@
 rails new videocl -d mysql
 
 rails g scaffold user name deleted_at
+
+rails g scaffold movie title synopsis:text 'rent_price:decimal{10,2}' is_rented:boolean
