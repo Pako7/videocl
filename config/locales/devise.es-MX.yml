@@ -3,6 +3,7 @@ es-MX:
   activate: 'Activar'
   are_you_sure: '¿Estás seguro?'
   inactivate: 'Deshabilitar'
+  forgot_your_password: '¿Ovidaste tu contraseña?'
   errors:
     messages:
       expired: "ha expirado, por favor pida uno nuevo"
@@ -19,6 +20,7 @@ es-MX:
   remember_me: 'Recordar'
   sign_up: 'Registrarme'
   forgot_my_password: 'Olvidé mi contraseña'
+  send_me_reset_password_instructions: 'Enviame las instrucciones'
   password_confirmation: 'Confirmar contraseña'
 
   devise:
