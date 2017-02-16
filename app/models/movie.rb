@@ -19,4 +19,13 @@ class Movie < ApplicationRecord
    validates :rent_price, numericality: true
    validates :is_rented, inclusion: {in: [true,false]}
    validates :image, file_size: {less_than: 0.5.megabytes.to_i}
+
+   class << self
+   	def random_boolean_value
+   	  success = [true, false].sample
+      message = success ? I18n.t(:completed_rent) : I18n.t(:incompleted_rent)
+      { message: message, success: success }
+   	end
+   end
+
 end
