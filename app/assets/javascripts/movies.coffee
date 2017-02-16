@@ -22,5 +22,5 @@ $(document).on 'click', '.rent-movie', (evt) ->
         $('#container-result-rent-message').modal 'show'
         window.setTimeout ->
          $('#container-result-rent-message').modal 'hide'
-        , 2450
+        , 2400
 

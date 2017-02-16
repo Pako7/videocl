@@ -3,12 +3,27 @@
 <h1>Movies</h1>
 
 <% @movies.each do |movie| %>
-    <%= movie.title.truncate(30) %>
-    <%= image_tag movie.image.url(:medium) %>
-    <%= movie.synopsis.truncate(100) %>
-    <%= movie.rent_price %>
-    <%= button_tag 'Rent', { type: 'button', class: 'rent-movie btn btn-primary', data: { id: movie.id }} %>
-    <br>
+   <div class="col-sm-4 col-lg-3 col-md-4">
+    <div class="thumbnail item-rent">
+        <%= image_tag movie.image.url(:medium) %>
+        <div class="caption">
+            <h4 class="pull-right"><%= number_to_currency movie.rent_price %></h4>
+            <h3><%= movie.title.truncate(30) %></h3>
+            <p><%= movie.synopsis.truncate(100) %></p>
+        </div>
+        <div class="ratings">
+            <p class="pull-right"><%= button_tag 'Rent', { type: 'button', class: 'rent-movie btn btn-primary', data: { id: movie.id }} %></p>
+            <p>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+            </p>
+        </div>
+    </div>
+  </div>
+
 <% end %>
 
 <div class="modal fade" id="container-result-rent-message" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
