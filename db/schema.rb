@@ -12,17 +12,20 @@
 
 ActiveRecord::Schema.define(version: 20170216035123) do
 
-  create_table "movies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "movies", force: :cascade do |t|
     t.string   "title"
-    t.text     "synopsis",   limit: 65535
-    t.decimal  "rent_price",               precision: 10, scale: 2
+    t.text     "synopsis"
+    t.decimal  "rent_price", precision: 10, scale: 2
     t.boolean  "is_rented"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "image"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "deleted_at"
     t.datetime "created_at",                          null: false
