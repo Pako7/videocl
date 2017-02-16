@@ -20,8 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es-MX:
+  errors:
+    messages:
+      extension_whitelist_error: 'Extensión de archivo no permitido'
   are_you_sure: '¿Está seguro?'
   back: 'Regresar'
+  business_name: 'VideoClub'
   edit: 'Editar'
   completed_rent: 'Se completó la renta.'
   helpers:

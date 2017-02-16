@@ -82,4 +82,4 @@ gem 'devise', '~> 4.2'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.5.1'
 gem 'bootstrap-sass', '~> 3.3.6'
-
+gem 'file_validators', '~> 2.1.0'
