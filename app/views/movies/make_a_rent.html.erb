@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<% @movies.each do |movie| %>
+    <%= movie.title.truncate(30) %>
+    <%= movie.synopsis.truncate(100) %>
+    <%= movie.rent_price %>
+    <%= button_tag 'Rent', { type: 'button', class: 'rent-movie', data: { id: movie.id }} %>
+    <br>
+<% end %>

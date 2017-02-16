@@ -61,6 +61,16 @@ class MoviesController < ApplicationController
     end
   end
 
+  def make_a_rent
+    @movies = Movie.all
+  end
+
+
+  def finalize_rent
+    message = [true, false].sample ? t(:completed_rent) : t(:incompleted_rent)
+    render json: { :message => message }
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie

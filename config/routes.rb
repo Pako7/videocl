@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :movies
+  resources :movies do
+  	collection do
+  	  get '/rent_a_movie', to: 'movies#make_a_rent'
+  	  post '/finalize_rent', to: 'movies#finalize_rent'
+  	end
+  end
   devise_for :users
   resources :users
-  root to: 'users#index'
+  root to: 'movies#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
