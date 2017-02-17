@@ -24,8 +24,8 @@
         <td><%= movie.synopsis.truncate(130) %></td>
         <td><%= movie.rent_price %></td>
         <td><%= t("say_#{!movie.is_rented}") %></td>
-        <td><%= link_to t('movie.show'), movie, {class: 'btn btn-info'} %></td>
-        <td><%= link_to t('movie.edit'), edit_movie_path(movie), {class: 'btn btn-info'} %></td>
+        <td><%= link_to t('movie.show'), movie, {class: 'btn bg-primary'} %></td>
+        <td><%= link_to t('movie.edit'), edit_movie_path(movie), {class: 'btn bg-primary'} %></td>
         <td><%= link_to t('movie.delete'), movie, method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>

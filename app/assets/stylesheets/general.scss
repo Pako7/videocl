@@ -1,3 +1,16 @@
 .li-no-style{
   list-style-type: none;
 }
+
+.header-menu{
+  background-color: #0084ff;
+}
+.navbar-menu-item{
+  color: #fff !important;
+}
+
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #0084ff !important;
+    background-color: #fff !important;
+}
