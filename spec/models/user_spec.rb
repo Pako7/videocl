@@ -22,5 +22,28 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+    context "validations" do
+
+  	subject {build(:user)}
+
+  	it "has a valid user" do
+      expect(subject).to be_valid
+  	end
+
+  	it "has not a valid user" do
+      expect(build(:invalid_user)).not_to be_valid
+  	end
+
+  	it "is not a valid name longer than 500 characters" do
+  		subject.name = 'a' * 500
+  		expect(subject).not_to be_valid
+  	end
+
+  end
+
+  describe User do
+		it { is_expected.to validate_presence_of(:name) }
+		it { is_expected.to validate_presence_of(:email) }
+		it { is_expected.to validate_presence_of(:password) }
+  end
 end

@@ -14,8 +14,8 @@
 
 class Movie < ApplicationRecord
    mount_uploader :image, AvatarUploader
-   validates :title, presence: true, length: { in: 3..100}
-   validates :synopsis, presence: true, length: { in: 3..1000}
+   validates :title, presence: true, length: { in: 1..100}
+   validates :synopsis, presence: true, length: { in: 3..10000}
    validates :rent_price, presence: true, numericality: {greater_than: -1, less_than: 100000}
    validates :is_rented, inclusion: {in: [true,false]}
    validates :image, file_size: {less_than: 0.5.megabytes.to_i}

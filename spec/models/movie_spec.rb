@@ -60,10 +60,7 @@ RSpec.describe Movie, type: :model do
   		expect(subject).not_to be_valid
   	end
 
-  	
-
   end
-
 
   describe Movie do
 		it { is_expected.to validate_presence_of(:title) }
@@ -74,8 +71,5 @@ RSpec.describe Movie, type: :model do
 
 end
 
-
-
-   
 
 

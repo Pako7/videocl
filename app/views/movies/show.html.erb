@@ -1,32 +1,41 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong><%= t('movie.title') %>:</strong>
-  <%= @movie.title %>
-</p>
-
-<p>
-  <strong><%= t('movie.image') %>:</strong>
-  <%= image_tag @movie.image.url(:medium) %>
-</p>
-
-<p>
-  <strong><%= t('movie.synopsis') %>:</strong>
-  <%= @movie.synopsis %>
-</p>
-
-<p>
-  <strong><%= t('movie.rent_price') %>:</strong>
-  <%= @movie.rent_price %>
-</p>
-
-<p>
-  <strong><%= t('movie.is_rented') %>:</strong>
-  <%= @movie.is_rented %>
+<div class="row">
+  <div class="col-lg-10 col-xl-10 col-md-12 col-sm-12 col-xs-12 col-lg-offset-1 col-lx-offset-1">
+  <p>
+  <strong><h1 align="center"><%= @movie.title %></h1></strong>
 </p>
 
 
-<td><%= link_to t('movie.delete'), @movie, method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger' %></td>
-<%= link_to t(:edit), edit_movie_path(@movie), {class: 'btn btn-info'} %>
+<div class="row">
+  <div class="col-lg-3 col-xl-2 col-md-3 col-sm-12 col-xs-12" align="center">
+    <%= image_tag @movie.image.url(:medium) %>
+  </div>
+
+
+  <div class="col-lg-7 col-xl-8 col-md-9 col-sm-12 col-xs-12">
+    <div class="show-attribute-margin-top">
+      <strong><%= t('movie.synopsis') %>:</strong>
+      <%= @movie.synopsis %>
+    </div>
+  </div>
+</div>
+
+
+<div class="show-attribute-margin-top">
+  <p>
+    <strong><%= t('movie.rent_price') %>:</strong>
+    <%= @movie.rent_price %>
+  </p>
+
+  <p>
+    <strong><%= t('movie.is_rented') %>:</strong>
+    <%= t("say_#{!@movie.is_rented}") %>
+  </p>
+</div>
+
+
 <%= link_to t(:back), movies_path, {class: 'btn btn-default'} %>
-<%= link_to t('movie.new'), new_movie_path, {class: 'btn btn-default'} %>
+<%= link_to t(:edit), edit_movie_path(@movie), {class: 'btn btn-info'} %>
+<%= link_to t('movie.delete'), @movie, method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger' %>
+
+</div>
+</div>

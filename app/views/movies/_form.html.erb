@@ -1,10 +1,9 @@
-
 <%= form_for(movie) do |f| %>
   <% if movie.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
-      <ul>
+      <ul class="alert alert-danger">
       <% movie.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -19,26 +18,41 @@
 
   <div class="field">
     <%= f.label t('movie.synopsis') %>
-    <%= f.text_area :synopsis, {class: "form-control"} %>
+    <%= f.text_area :synopsis, {class: "form-control", rows: 10} %>
   </div>
 
-  <div class="field">
-    <%= f.label t('movie.rent_price') %>
-    <%= f.text_field :rent_price, {class: "form-control"} %>
+
+  <div class="field col-md-12 col-sm-12 col-xs-12">
+    <div class="form-group">
+      <%= f.label t('movie.image') %>
+      <%= f.file_field :image %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label t('movie.image') %>
-    <%= f.file_field :image %>
-  </div>
+  <div class="row">
+      <div class="field col-md-6 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label t('movie.rent_price') %>
+        <div class="input-group">
+          <div class="input-group-addon">$</div>
+          <%= f.text_field :rent_price, {class: "form-control"} %>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label t('movie.is_rented') %>
-    <%= f.check_box :is_rented %>
+    <div class="field col-md-6 col-sm-6 col-xs-12">
+      <div class="form-group">
+      <br>
+        <%= f.label t('movie.is_rented') %>
+        <%= f.check_box :is_rented %>
+      </div>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit class: 'btn btn-info' %>
+    <%= f.submit class: 'btn bg-primary' %>
+    <%= link_to t('movie.show'), @movie, {class: 'btn btn-default'} unless @movie.new_record? %>
+    <%= link_to t(:back), movies_path, {class: 'btn btn-default'} %>
   </div>
 <% end %>
 

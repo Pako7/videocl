@@ -1,36 +1,46 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= t(:movies) %></h1>
-
-<% @movies.each do |movie| %>
-   <div class="col-sm-4 col-lg-3 col-md-4">
-    <div class="thumbnail item-rent">
+<div class="col-sm-12 col-lg-12 col-md-12">
+  <% @movies.each do |movie| %>
+    <div class="col-sm-4 col-lg-3 col-md-4">
+      <div class="thumbnail item-rent">
+        <div class="page-header">
+          <h4 align="center" data-toggle="tooltip" data-placement="top" title="<%= movie.title %>">
+            <%= movie.title.truncate(30) %>
+          </h4>
+          </div>
         <%= image_tag movie.image.url(:medium) %>
         <div class="caption">
-            <h4 class="pull-right"><%= number_to_currency movie.rent_price %></h4>
-            <h3><%= movie.title.truncate(30) %></h3>
-            <p><%= movie.synopsis.truncate(100) %></p>
+          <p><%= movie.synopsis.truncate(80) %></p>
         </div>
         <div class="ratings">
-            <p class="pull-right"><%= button_tag t('movie.rent'), { type: 'button', class: 'rent-movie btn btn-primary', data: { id: movie.id }} %></p>
-            <p>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-            </p>
+          <p class="pull-right">
+            <%= number_to_currency movie.rent_price %></span>
+            <%= button_tag t('movie.rent'), { type: 'button', class: 'rent-movie btn', data: { id: movie.id }} %>
+          </p>
+          <p>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+          </p>
         </div>
+      </div>
     </div>
-  </div>
-
-<% end %>
+  <% end %>
+</div>
 
 <div class="modal fade" id="container-result-rent-message" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content" id="modal-content-message">
-    	<div id="modal-message-rent" class="alert" role="alert">
-      </div>
+    <div id="modal-content-message">
+      <h4 id="modal-message-rent" class="alert" role="alert">
+      </h4>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>

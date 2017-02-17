@@ -16,7 +16,7 @@
         <li class="<%= active_class(rent_a_movie_movies_path) %>" ><%= link_to t('movie.rent'), rent_a_movie_movies_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+        <li><%= link_to("#{current_user.email} [ #{t(:logout)} ]", destroy_user_session_path, method: :delete) %></li>
       </ul>
     </div>
   </div>
