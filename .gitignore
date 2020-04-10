@@ -13,5 +13,50 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore Byebug command history file.
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+
+/public/assets
 .byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+
+*.rdb
+dump.rdb
+*.rbc
+capybara-*.html
+.rspec
+/log/**/*.log
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/spec/tmp
+public/assets
+public/packs
+public/packs-test/
+**.orig
+rerun.txt
+pickle-email-*.html
+.byebug_history
+.idea/
+npm-debug.log
+
+config/secrets.yml
+.DS_Store
+app/assets/webpack/
+
+config/database.yml
+.generators
+.rakeTasks
