@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.6.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -9,10 +9,11 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 6.0.0'
 # Use mysql as the database for Active Record
 #gem 'mysql2', '>= 0.3.18', '< 0.5'
-gem 'pg', '~> 0.18'
+
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -63,7 +64,6 @@ group :development do
   gem 'annotate', '~> 2.6'
 end
 
-
 group :test do
   #provides one-line matchers to RSpec
   gem 'shoulda-matchers', '~> 3.1', require: false
@@ -74,7 +74,6 @@ group :test do
   #to see how much of your code is tested
   gem 'simplecov', '~> 0.12', :require => false
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
